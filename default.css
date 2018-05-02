@@ -19,6 +19,7 @@
 	{
 		margin: 0;
 		padding: 0;
+		text-align: left;
 		font-weight: 600;
 		color: #333333;
 	}
@@ -359,12 +360,13 @@
 
 	.title
 	{
+		
 		margin-bottom: 3em;
 	}
 	
 	.title h2
 	{
-		text-transform: lowercase;
+		text-transform: inherit;
 		font-size: 2.8em;
 	}
 	

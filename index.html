@@ -28,7 +28,7 @@ Released   : 20130902
 	<div id="header">
 		<div id="logo">
 			<img src="images/q q isso jovem.jpg" alt="" />
-			<h1><a href="#">Marcus</a></h1>
+			<h1 style="text-align: center"><a href="#">Marcus</a></h1>
 			<span><a rel="nofollow">Pagina Pessoal Ainda em desenvolvimento</a></span>
 		</div>
 		<div id="menu">
@@ -38,8 +38,8 @@ Released   : 20130902
 				<li><a href="#Versoes" accesskey="3" title="">Versões</a></li>
 				<li><a href="#Instalacao" accesskey="3" title="">Instalação da Ferramenta</a></li>
 				<li><a href="#Arquitetura" accesskey="5" title="">Arquitetura da ferramenta</a></li>
-				<li><a href="#" accesskey="6" title="">Principais	Funcionalidades</a></li>
-				<li><a href="#" accesskey="7" title="">Gerador de	Carga	de	Trabalho</a></li>
+				<li><a href="#Principais" accesskey="6" title="">Principais	Funcionalidades</a></li>
+				<li><a href="#GeradorCarga" accesskey="7" title="">Gerador de	Carga	de	Trabalho</a></li>
 				<li><a href="#" accesskey="8" title="">Monitor	do	Ambiente</a></li>
 				<li><a href="#" accesskey="9" title="">Integrações	com	Outras	Tecnologias</a></li>
 				<li><a href="#" accesskey="10" title="">Limitações	da	Ferramenta</a></li>
@@ -55,7 +55,7 @@ Released   : 20130902
 		</div>
 		<div id="Introducao">
 			<div class="title">
-				<h2>Teste de desenpenho com a ferramenta VisualStudio</h2>
+				<h2>Teste de Desenpenho com a Ferramenta Visual Studio</h2>
 				<!--<span class="byline">Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue</span>-->
 			</div>
 			<p>O VisualStudio é uma ferramenta de desemvolvimento integrado da Microsoft, capaz de oferecer suporte completo para o desenvolvimento de software multiplatafoemas, apliações Web e desemvonvimento Mobile multiplataforma. A ferrmenta possuí diversas funcionalidades para o desenvolvimento de apliccações, sendo uma delas as ferramentas de teste de desenpenho que ela oferece. Essas funionalidades serão nosso foco neste artigo.</p>		
@@ -73,7 +73,7 @@ Released   : 20130902
 		<div id="Instalacao">
 			
 			<div class="title">
-				<h2>Instalação da ferramenta</h2>
+				<h2>Instalação da Ferramenta</h2>
 			</div>
 			<p>Como queremos realizar testes de desempenho devemos fazer o <a href="https://www.visualstudio.com/pt-br/downloads/" rel="nofollow">download</a> da versão Enterprise. Quando terminar o download execute o arquivo "vs_enterprise.exe", aceite os termos de uso e instale a ferramenta. Ao chegar na tela de escolha de paotes clique em componentes individuais.</p>
 			<img src="images/install-visual-studio-enterprise.png" alt="" class="imagem" />
@@ -93,8 +93,70 @@ Released   : 20130902
 				<p>Por se tratar de uma ferramenta de iniciativa privada da Microsoft, a empressa não deixa o código fonte disponível para que possamos ver sua arquitetura. Pela minha experiência com a ferramenta acredito se seja uma arquitetura baseada em componentes, pois é possivel instalar a IDE sem nenhuma funcionalidade e depois seleionar os pacotes neccessarios para termos accesso a funcionalidades específias. Como mostratado na seção de instalação tivemos que escolher apenas os pacotes de testes específicos</p>		
 		</div>
 		
+		<div id="Principais">
+				<div class="title">
+					<h2>Principais Funcionalidades</h2>
+				</div>
+				<p>Agora mostrarei como criar um script de teste de desempenho e as principais configurações que podemos fazer em nosso script. Primeiro abra a ferramenta e clique em arquivo>>novo>>projeto na barra de tarefa superior".</p>	
+				<img src="images/CriandoProjeto.png" alt="" class="image-full" />
+				<p>Em seguida esolha o projeto "Projeto de Teste de arga e Desenpenho na Web", nomeie o seu projeto e clique em "OK".</p>
+				<img src="images/esolhaProjeto.PNG" alt="" class="image-full" />
+				<p>Agora podemos criar nosso primeiro script. Clique com o botão direito do nome do seu projeto na barra de gereniador de soluções adicionar>>teste de desempenho web. Caso a barra de gereniador de soluções não apareça clique na barra exibir superior Exibir>>Gereniador de Soluções.</p>
+				<img src="images/criandoTesteWebScript.png" alt="" class="image-full" />
+				<p>O visual Studio abrira o Internet Explore para você poder gravar suas ações enquanto navega pela pagina. Não se preocupe o navegador ira gravar automaticamente, não é neessario configuar nada, apenas navegue como se fosse uma interação normal de um usuario. Ao terminar suas ações clique em "Stop" para parar a gravação.</p>
+				<img src="images/use-app-stop-recording.png" alt="" class="image" />
+				<p>Depois que terminar a gravação a ferramenta ira testar o script para detectar parâmetros dinâmicos, pois, outra pessoa pode querer rodar o mesmo script em um ambiente totalmente diferente e ocorrer problemas. Esse teste pode falhar ou passar, falhando ou passando seu script esta pronto.</p>
+		</div>
+		<div class="title">
+				<h1>Configurando o Script</h1>
+			</div>
+			<p>Na imagem abaixo mostar varias requisições repetidas, podemos parametrizá las facilmente clicando em "Parametrizar servidores da Web".</p>
+			<img src="images/ReqRepetidas.PNG" alt="" class="image" />
+			<p>Caso quera alterar alguma das informações basta cliar em alterar ou apenas confirme.</p>
+			<img src="images/confParametros.PNG" alt="" class="image" />
+			<p>Para definir o ThinkTime de cada requisição basta clicar no botão marcado em vermelho na imagem abaixo. Em seguida altere o tempo de processamento de cada requisição e aso queira o tempo de resposta esperado daquela requisição. Lembrando que o valor inserido sera interpretado como segundos.</p>
+			<img src="images/AddthinkTime.PNG" alt="" class="image-full" />
+			<p>Agora mostrarei omo parametrizar os dados. Clique no ícone em vermelho demonstrado a imagem abaixo, escolha o tipo de fonde de dado um arquivo ".csv". </p>
+			<img src="images/ParametrizandoDado1.PNG" alt="" class="image-full" />
+			<p>Agora basta esolher o caminho onde se enontra o seu arquivo CSV e confirme a operação.</p>
+			<img src="images/escolheArquivoCsv.PNG" alt="" class="image" />
+			<p>Em seguida clique com o botão direito no parâmetro desejado e clique em propiedades.</p>
+			<img src="images/propiedadesParemetrizando.png" alt="" class="image"/>
+			<p>Altere o valor do parâmetro para a variável correspondente do seu arquivo CSV.</p>
+			<img src="images/VinculaParametrizacao.png" alt="" class="image"/>
+			<p>Por fim abra o arquivo Local.testsettings no Gerenciador de Soluções e selecione aquele executado pela opção de linha da fonte de dados.</p>
+			<img src="images/fimDissoCheggaaaaaaa.PNG" alt="" class="image-full"/>
+			<p>Apenas mais uma dica, você pode configurar outros detalhes de uma requisição vendo a barra de propiedades. Também é possível adicionar operações logica como loops e condições nas requisições.</p>
+			<img src="images/operadoresLogicos.png" alt="" class="image"/>
+			
+
+			<div id="GeradorCarga">
+					<div class="title">
+						<h2>Gerador de	Carga	de	Trabalho</h2>
+					</div>
+					<p>Agora que aprendemos a criar um script de teste, vamos aprender a criar um teste de carga local. Primeiro vá ao gereniador de soluções e Adicionar>>Teste de Carga.</p>
+					<img src="images/addCenario.png" alt="" class="image"/>
+					<p>Abrirar uma jánela assistente de teste de carga. Em seguida selecione teste de carga local.</p>
+					<img src="images/assitenteCargaMenu.PNG" alt="" class="image-full"/>
+					<p>Agora podemos escolher o tempo de aquecimento da maqiuna antes de iniciar os testes caso queira e o tempo de duração do teste de carga. Você também pode definir um valor fixo para a quantidade de iterações que deve ser feita com os casos de testes. Coloque o tempo de atualização enquanto estiver monitorando o teste. O nível de validação é definido nas propiedades das requisições.</p>
+					<img src="images/assitenteCargaL1.PNG" alt="" class="image-full"/>
+					<p>Agora escolhemos o ThinkTime das requisições, temos três opções, utilizar o tempo de proccessamento salvo no script, um tempo padrão para todas as requisições ou não utilizar o tempo de procesasmento. Podemos também colocar um tempo entre cada interação de teste.</p>
+					<img src="images/assitenteCargaL2.PNG" alt="" class="image-full"/>
+					<p>Definiremos a quantidade de usuários que iram gerar a carga, podemos escolher a quantidade inicial de carga e incrementar X usuários em tempos definidos. Escolha a carga maxima que pode ser gerada (caso não seja uma versão completa hávera um limite maximo de 250 usuários).</p>
+					<img src="images/assitenteCargaL3.PNG" alt="" class="image-full"/>
+					<p>Escolha a estratégia que será utilizada para executar o teste de carga. Não detalharei cada método porque a ferramenta deixa explícito a ideia de cada estratégia.</p>
+					<img src="images/assitenteCargaL4.PNG" alt="" class="image-full"/>
+					<p>Ao clicar em "Adicionar" devemos escolher os scripts de teste que vamos utilizar no nosso teste de carga. Podemos também distribuir a porcentagem de usuários que exeutará o teste.</p>
+					<img src="images/assitenteCargaL5.PNG" alt="" class="image-full"/>
+					<p>Podemos também escolher o tipo de rede do usuário e distribuir em porcentagem de quantos usuários iram usar tal tipo de rede.</p>
+					<img src="images/assitenteCargaL6.PNG" alt="" class="image-full"/>
+					<p>Funiona da mesma maneira do que a imagem anterior, só que ao invés de esolhermos a rede sera o tipo de navegador que os usuários utilizaram</p>
+					<img src="images/assitenteCargaL7.PNG" alt="" class="image-full"/>
+					<p>Aqui podemos adicionar uma maquina e escolhermo o tipos de medidas para monitorar a maquina. Infelizmente não consegui configurar um servidor para poder utilizar esta funcionalidade, tive problemas com questões de assinaturas.</p>
+					<img src="images/assitenteCargaL8.PNG" alt="" class="image-full"/>
+					
 		
-		<div id="copyright">
+			<div id="copyright">
 			<span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</span>
 		</div>
 		
